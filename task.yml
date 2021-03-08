@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 execution:
 - concurrency: 10
   hold-for: 5m
@@ -28,19 +27,3 @@ criteria:
 
 
 - filename: taurus-output/TEST-Taurus.xml
-=======
-{
-
-execution:
-- concurrency: 100
-  ramp-up: 1m
-  hold-for: 5m
-  scenario: quick-test
-
-scenarios:
-  quick-test:
-    requests:
-    
-
-}
->>>>>>> ade9f202df6bddc8b637007851c12deb6cb4e1bd
