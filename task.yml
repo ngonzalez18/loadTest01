@@ -1,0 +1,29 @@
+execution:
+- concurrency: 10
+  hold-for: 5m
+  ramp-up: 2m
+  scenario: sample
+
+data-sources:
+   delimiter: ','
+   path: users.csv
+   quoted: false
+   recycle: true
+
+reporting:
+
+- module: passfail
+
+criteria: 
+#- avg-rt>0.150ms for 1s, continue as failed 
+#- avg-rt or HTTP Request-BBB>0.2ms for 1s, stop as failed        #Working OK
+- avg-rt of HTTP Request - Login>10000ms for 30s, stop as failed
+- avg-rt of HTTP Request - Menu hamburguesa - Login>10000ms for 30s, stop as failed
+- avg-rt of HTTP Request - Carrusel y banner>10000ms for 30s, stop as failed
+- avg-rt of HTTP Request - Widget del home>10000ms for 30s, stop as failed
+- avg-rt of HTTP Request - carrito por customer id >10000ms for 30s, stop as failed
+- avg-rt of HTTP Request - HTTP Request - carrito nuevo>10000ms for 30s, stop as failed
+- avg-rt of HTTP Request - HTTP Request - Pagar>10000ms for 30s, stop as failed 
+
+
+- filename: taurus-output/TEST-Taurus.xml
