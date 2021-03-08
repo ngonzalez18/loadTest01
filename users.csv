@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1614626970307,0,Login,200,"Number of samples in transaction : 0, number of failing samples : 0",Flujo pagar con carrito creado  1-1,,true,,0,0,1,1,null,0,11520,0
+1614626981829,1613,HTTP Request - Menu hamburguesa,200,OK,Flujo pagar con carrito creado  1-1,text,true,,400,851,1,1,https://aludra-api-management.azure-api.net/settings/qa/externalMenu/search?page=1&limit=10,1613,0,0
+1614626985518,17445,HTTP Request - Carrusel y banner,200,OK,Flujo pagar con carrito creado  1-1,text,true,,6001,765,1,1,https://aludra-api-management.azure-api.net/mdl17/qa/promotions/search?page=1&limit=20,17445,0,0
+1614627004987,4262,HTTP Request - Widget del home ,200,OK,Flujo pagar con carrito creado  1-1,text,true,,20520,788,1,1,https://aludra-api-management.azure-api.net/products/qa/products/promotionwidgets/search,3260,0,0
+1614626981829,23320,Respuesta del login ,200,"Number of samples in transaction : 6, number of failing samples : 0",Flujo pagar con carrito creado  1-1,,true,,26921,2404,1,1,null,22318,7116,0
+1614627012267,0,Carrito por customer id ,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,674,0
+1614627015784,0,Carrito nuevo ,200,"Number of samples in transaction : 0, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1614627015785,7100,HTTP Request - Pagar,200,OK,Flujo pagar con carrito creado  1-1,text,true,,387,3623,1,1,https://aludra-api-management.azure-api.net/mdl11/qa/SaveTransaction,7100,0,0
+1614627015784,7100,Realizar pago,200,"Number of samples in transaction : 2, number of failing samples : 0",Flujo pagar con carrito creado  1-1,,true,,387,3623,1,1,null,7100,11064,0
+1614627033956,1873,HTTP Request - carrito nuevo,200,OK,Usuario con carrito nuevo  2-1,text,true,,1462,1556,1,1,https://aludra-api-management.azure-api.net/mdl17/qa/customerlist?page=1&limit=1,1873,0,929
