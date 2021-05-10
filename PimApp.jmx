@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="NAOS" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(lCount)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(noThreads,1)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(rampUp,1)}</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">api-key</stringProp>
+              <stringProp name="Header.value">x+Wik27RosbvnhVWTqsRdXKrDgjQfcuVVWUKjjwT+t3DhY0I5Ej0el8Q+ZbMcqC5wdXiKCdGf5OmX13DTqey4pX8oEbr91UjkpDIkWYqKSH1qLhYrBVwCAHN60kVEydkVCQCVelH/H8LtLEdZGdawcbhQoeHRcbGdv4xn2YJnYYMfXIvWnVLYOxRCHL37DbN/CL2OdFEgOEXPcQPJmsY02Ww/weVNLM5a5cLhSg41XJL7ZGocwu8NDDu56dbEYjgtwGNvJkoOfGZU7sm2OpnkDBLGYaHkDeqQ2yzD8AB6C+Cvv9iK90t8iBQiTmorSMgxB0BiRXjc41M4lozqHtW9Q==</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Origin</stringProp>
+              <stringProp name="Header.value">http://adidas.naos.buzz</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Referer</stringProp>
+              <stringProp name="Header.value">http://adidas.naos.buzz/</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Accept-Language</stringProp>
+              <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;DepartmentId&quot;: &quot;FBE9A6E3-8FF7-46F9-BB35-E322B3EFD148&quot;,&#xd;
+  &quot;CompanyId&quot;: null,&#xd;
+  &quot;CategoryId&quot;: null,&#xd;
+  &quot;SubCategoryId&quot;: null,&#xd;
+  &quot;SearchText&quot;: &quot;&quot;,&#xd;
+  &quot;CustomerId&quot;: null,&#xd;
+  &quot;PageNumber&quot;: 1,&#xd;
+  &quot;PageSize&quot;: 28,&#xd;
+  &quot;PriceListId&quot;: &quot;adfc9432-8d75-4ca9-a91d-6d3483d5fd26&quot;,&#xd;
+  &quot;brandId&quot;: null,&#xd;
+  &quot;OrderBy&quot;: &quot;regularprice&quot;,&#xd;
+  &quot;OrderDir&quot;: &quot;desc&quot;,&#xd;
+  &quot;CustomerApp&quot;: true,&#xd;
+  &quot;ProductListGroupId&quot;: null,&#xd;
+  &quot;Companies&quot;: [&#xd;
+    {&#xd;
+      &quot;CompanyId&quot;: &quot;CA52611F-57EA-4F46-86EC-EE376F29C30A&quot;&#xd;
+    }&#xd;
+  ]&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">https://aludra-api-management.azure-api.net/products/qa/products/searchproducts</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Novey" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(lCount)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(noThreads,1)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(rampUp,1)}</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Api-Key</stringProp>
+              <stringProp name="Header.value">8m80kZYdrvLnYUDSMBdX0z/xRDuwF/iyVD6L2CdLwV6+2RsoexY+YnNNjzcYd7xMs40KAYNan9QmsVmqBtt35Ytdo3lBwxkan+FZO9J/H4hXIUNWtp1cTOgSVSxRnlNQKssx+5AIS9UaRQVVvLvv3c/TAMTXAYSp9CfQRhb6WlyTznwyOTYD7fBq3dXZzol/ijEct19TpzEBMOJr1NpKCHuxWjQOAXjhuhJA0ht2s6nTLfcNLLXTOAS4Zk5JXxQ3tLzMOTCHKgvO3v7uXsJmFLYPVUeDB+LnJIWm4EQVBkYJz3N4pmd8pmm6UzeIF4J7AsaYEecULNZRTAIcddnuzg==</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json </stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Ocp-Apim-Subscription-Key</stringProp>
+              <stringProp name="Header.value">9a475d30a449456b9f84759164d33a6e</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+   &quot;CustomerId&quot;:&quot;C21F843F-61E4-4BBD-B833-360E811FB37C&quot;,&#xd;
+   &quot;PageNumber&quot;:1,&#xd;
+   &quot;PageSize&quot;:25,&#xd;
+   &quot;IsActive&quot;:true,&#xd;
+   &quot;PriceListId&quot;:&quot;6E045CDF-DC16-400F-9854-BF94AFA9976D&quot;,&#xd;
+   &quot;CustomerApp&quot;:true,&#xd;
+   &quot;ProductListGroupId&quot;:null,&#xd;
+   &quot;OrderBy&quot;:null,&#xd;
+   &quot;OrderDir&quot;:null,&#xd;
+   &quot;DepartmentId&quot;:&quot;E4E70999-F5D9-4A76-938D-FD70717A835C&quot;,&#xd;
+   &quot;CategoryId&quot;:&quot;476C38E9-CE28-4D98-B5A5-1C8F37895806&quot;,&#xd;
+   &quot;SubCategoryId&quot;:&quot;E46C0AEB-10AC-4FF2-8E71-5B6061271B90&quot;,&#xd;
+   &quot;BrandId&quot;:null,&#xd;
+   &quot;SearchText&quot;:&quot;I3242040&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">https://aludra-api-management.azure-api.net/products/qa/products/searchproducts</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+      <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+        <stringProp name="filename"></stringProp>
+        <stringProp name="parameters"></stringProp>
+        <boolProp name="resetInterpreter">false</boolProp>
+        <stringProp name="script">import java.text.DecimalFormat;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
+int tdNumber = ctx.getThreadNum();
+int noThreads = ctx.getThreadGroup().getNumThreads();
+long tdStard = ctx.getThread().getStartTime();
+long tdEnd = ctx.getThread().getEndTime();
+String respCode = ctx.getPreviousResult().getResponseCode();
+String respMsg = ctx.getPreviousResult().getResponseMessage();
+String samplerName = sampler.getName();
+
+
+/*format the date*/
+Date date = new Date();
+date.setDate(date.getDate());
+SimpleDateFormat df = new SimpleDateFormat(&quot;HH:MM:SS&quot;);
+String formattedDate = df.format(date);
+
+log.info(&quot;Sampler:: &quot; + samplerName + &quot;....threadNo::&quot; + (tdNumber + 1) + &quot;....StartTime:: &quot; + formattedDate +
+&quot;....StatusCode:: &quot; + respCode + &quot;....totalThreads:: &quot; + noThreads + &quot;....iterationNo:: &quot; + vars.getIteration();</stringProp>
+      </BeanShellPostProcessor>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
